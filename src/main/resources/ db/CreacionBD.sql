@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-03-2012 a las 08:40:52
+-- Tiempo de generación: 27-03-2012 a las 10:57:30
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `Quality_Campaña` (
 CREATE TABLE IF NOT EXISTS `Quality_CAT_Parentesco` (
   `Id_Parentesco` int(5) NOT NULL,
   `Nom_Parentesco` varchar(10) NOT NULL,
-  PRIMARY KEY (`Nom_Parentesco`)
+  PRIMARY KEY (`Nom_Parentesco`,`Id_Parentesco`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -74,9 +74,9 @@ CREATE TABLE IF NOT EXISTS `Quality_CAT_Parentesco` (
 CREATE TABLE IF NOT EXISTS `Quality_CAT_Potenciacion` (
   `Id_Potenciacion` int(5) NOT NULL,
   `Num_Potenciacion` int(5) NOT NULL,
-  `Porcentaje_Potenciacion` varchar(10) NOT NULL,
-  `Mes_Potenciacion` varchar(10) NOT NULL,
-  PRIMARY KEY (`Num_Potenciacion`,`Porcentaje_Potenciacion`,`Mes_Potenciacion`,`Id_Potenciacion`)
+  `Porcentaje_Potenciacion` int(5) NOT NULL,
+  `Mes_Potenciacion` int(5) NOT NULL,
+  PRIMARY KEY (`Id_Potenciacion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -125,7 +125,8 @@ CREATE TABLE IF NOT EXISTS `Quality_Formato` (
   `Fecha_Formato` date NOT NULL,
   `Nom_Region` varchar(15) NOT NULL,
   PRIMARY KEY (`Id_Formato`),
-  KEY `fk_Quality_Formato_1` (`Id_Emp`)
+  KEY `fk_Quality_Formato_1` (`Id_Emp`),
+  KEY `fk_Quality_Formato_2` (`Id_Potenciacion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -148,8 +149,8 @@ CREATE TABLE IF NOT EXISTS `Quality_Region` (
 -- Filtros para la tabla `Quality_Beneficiario`
 --
 ALTER TABLE `Quality_Beneficiario`
-  ADD CONSTRAINT `fk_Quality_Beneficiario_2` FOREIGN KEY (`Num_Porcentaje`) REFERENCES `Quality_Potenciacion` (`Num_Potenciacion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Quality_Beneficiario_1` FOREIGN KEY (`Nom_Parentesco`) REFERENCES `Quality_CAT_Parentesco` (`Nom_Parentesco`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Quality_Beneficiario_1` FOREIGN KEY (`Nom_Parentesco`) REFERENCES `Quality_CAT_Parentesco` (`Nom_Parentesco`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Quality_Beneficiario_2` FOREIGN KEY (`Num_Porcentaje`) REFERENCES `Quality_Potenciacion` (`Num_Potenciacion`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `Quality_Empleado`
@@ -163,7 +164,8 @@ ALTER TABLE `Quality_Empleado`
 -- Filtros para la tabla `Quality_Formato`
 --
 ALTER TABLE `Quality_Formato`
-  ADD CONSTRAINT `fk_Quality_Formato_1` FOREIGN KEY (`Id_Emp`) REFERENCES `Quality_Empleado` (`Id_Emp`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Quality_Formato_1` FOREIGN KEY (`Id_Emp`) REFERENCES `Quality_Empleado` (`Id_Emp`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Quality_Formato_2` FOREIGN KEY (`Id_Potenciacion`) REFERENCES `Quality_CAT_Potenciacion` (`Id_Potenciacion`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
