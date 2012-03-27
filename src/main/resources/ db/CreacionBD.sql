@@ -170,3 +170,62 @@ ALTER TABLE `Quality_Formato`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+--
+-- Estructura de tabla para la tabla `Quality_AUTHORITIES`
+--
+
+CREATE TABLE IF NOT EXISTS `Quality_AUTHORITIES` (
+  `ID_USER` int(10)  NOT NULL,
+  `AUTHORITY` varchar(50) NOT NULL,
+  UNIQUE KEY `IX_AUTH_USER` (`ID_USER`,`AUTHORITY`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcar la base de datos para la tabla `Quality_AUTHORITIES`
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `Quality_USERS`
+--
+--
+-- Volcar la base de datos para la tabla `Quality_USER_PASSWORD`
+--
+CREATE TABLE IF NOT EXISTS `Quality_USERS` (
+  `ID_USER` int(10) NOT NULL AUTO_INCREMENT,
+  `USERNAME` varchar(50) NOT NULL,
+  `ENABLED` tinyint(1) NOT NULL,
+  `EMAIL` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`ID_USER`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  
+-- --------------------------------------------------------
+
+-- Estructura de tabla para la tabla `Quality_USER_PASSWORD`
+--
+
+CREATE TABLE IF NOT EXISTS `Quality_USER_PASSWORD` (
+   `ID_USER` int(10) NOT NULL,
+  `PASSWORD` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+-- Filtros para las tablas descargadas (dump)
+--
+
+--
+-- Filtros para la tabla `Quality_AUTHORITIES`
+--
+ALTER TABLE `Quality_AUTHORITIES`
+  ADD CONSTRAINT `FK_Quality_AUTHORITIES_Quality_USERS` FOREIGN KEY (`ID_USER`) REFERENCES `Quality_USERS` (`ID_USER`);
+
+--
+
+  --
+-- Filtros para la tabla `Quality_USER_PASSWORD`
+--
+ALTER TABLE `Quality_USER_PASSWORD`
+  ADD CONSTRAINT `FK_Quality_USER_PASSWORD_Quality_USER` FOREIGN KEY (`ID_USER`) REFERENCES `Quality_USERS` (`ID_USER`);
