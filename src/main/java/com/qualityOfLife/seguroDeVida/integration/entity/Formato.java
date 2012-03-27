@@ -1,4 +1,4 @@
-package om.qualityOfLife.seguroDeVida.integration.entity;
+package com.qualityOfLife.seguroDeVida.integration.entity;
 
 import java.sql.Date;
 

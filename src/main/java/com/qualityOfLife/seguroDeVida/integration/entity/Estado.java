@@ -1,4 +1,4 @@
-package om.qualityOfLife.seguroDeVida.integration.entity;
+package com.qualityOfLife.seguroDeVida.integration.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
