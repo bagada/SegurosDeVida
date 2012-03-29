@@ -40,7 +40,7 @@
 				<value>com.qualityOfLife.seguroDeVida.integration.entity.Empleado</value>
 				<value>com.qualityOfLife.seguroDeVida.integration.entity.Estado</value>
 				<value>com.qualityOfLife.seguroDeVida.integration.entity.Formato</value>
-				<value>com.qualityOfLife.seguroDeVida.entity.Region</value>
+				<value>com.qualityOfLife.seguroDeVida.integration.entity.Region</value>
 								
 			</list>
 		</property>

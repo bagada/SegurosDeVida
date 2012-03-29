@@ -47,7 +47,7 @@ a.linkopacity:hover img {
 
 <html>
 <head>
-<title>Poliformas Warehouse</title>
+<title>Quality Of Life  </title>
 	
 	<link rel="stylesheet" href="resources/css/login.css" type="text/css" media="screen" />
 </head>
