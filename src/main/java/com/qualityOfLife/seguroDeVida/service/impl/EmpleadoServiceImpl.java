@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.qualityOfLife.seguroDeVida.integration.dao.EmpleadoDAO;
 import com.qualityOfLife.seguroDeVida.integration.entity.Empleado;
-import com.qualityOfLife.seguroDeVida.security.service.EmpleadoService;
+import com.qualityOfLife.seguroDeVida.service.EmpleadoService;
 
 public class EmpleadoServiceImpl implements EmpleadoService {
 

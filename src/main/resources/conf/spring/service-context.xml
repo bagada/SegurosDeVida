@@ -7,12 +7,12 @@
 	<bean id="campañaService" class="com.qualityOfLife.seguroDeVida.service.impl.CampañaServiceImpl" />
 	<bean id="empleadoService" class="com.qualityOfLife.seguroDeVida.service.impl.EmpleadoServiceImpl" />
 	<bean id="formatoService" class="com.qualityOfLife.seguroDeVida.service.impl.FormatoServiceImpl" />
+	<bean id="parentescoService" class="com.qualityOfLife.seguroDeVida.service.imp.ParentescoServiceImpl"/>
+	<bean id="pontenciacionService" class="com.qualityOfLife.seguroDeVida.service.impl.PotenciacionServiceImpl" />
 	<bean id="regionService" class="com.qualityOfLife.seguroDeVida.service.impl.RegionServiceImpl" />
 	<bean id="userService" class="com.qualityOfLife.seguroDeVida.service.impl.UserServiceImpl" />
 	<bean id="userPasswordService" class="com.qualityOfLife.seguroDeVida.service.impl.UserPasswordServiceImpl" />
 	<bean id="authorityService" class="com.qualityOfLife.seguroDeVida.service.impl.AuthorityServiceImpl" />
 	<!-- <bean id="Service" class="com.qualityOfLife.seguroDeVida.service.impl.ServiceImpl" /> -->
-	
-
-	
+		
 </beans>

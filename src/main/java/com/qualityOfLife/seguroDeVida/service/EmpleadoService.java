@@ -1,4 +1,4 @@
-package com.qualityOfLife.seguroDeVida.security.service;
+package com.qualityOfLife.seguroDeVida.service;
 
 import com.qualityOfLife.seguroDeVida.integration.entity.Empleado;
 

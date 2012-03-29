@@ -27,8 +27,6 @@
    
    <security:global-method-security secured-annotations="enabled" pre-post-annotations="enabled"/>	
  
- 
- 
     
     <security:authentication-manager>
         <security:authentication-provider ref="qualityDaoAuthenticationProvider" user-service-ref="hibernateUserDetailsService">            

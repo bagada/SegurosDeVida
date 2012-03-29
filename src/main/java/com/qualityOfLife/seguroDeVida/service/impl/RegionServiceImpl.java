@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.qualityOfLife.seguroDeVida.integration.dao.RegionDAO;
 import com.qualityOfLife.seguroDeVida.integration.entity.Region;
-import com.qualityOfLife.seguroDeVida.security.service.RegionService;
+import com.qualityOfLife.seguroDeVida.service.RegionService;
 
 public class RegionServiceImpl implements RegionService {
 	@Autowired
