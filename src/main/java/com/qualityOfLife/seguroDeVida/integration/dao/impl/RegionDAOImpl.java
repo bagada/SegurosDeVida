@@ -5,7 +5,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import com.qualityOfLife.seguroDeVida.integration.dao.RegionDAO;
 import com.qualityOfLife.seguroDeVida.integration.entity.Region;
 
-public class RegionDaoImpl  extends HibernateDaoSupport implements RegionDAO{
+public class RegionDAOImpl  extends HibernateDaoSupport implements RegionDAO{
 
 	public void saveRegion(Region region) {
 		getHibernateTemplate().save(region);

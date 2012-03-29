@@ -10,14 +10,6 @@
 </HEAD>
 <BODY BGCOLOR=#99CCFF>
 
-<h1> Agrega Beneficiarios </h1>
- <div id="errorDiv">
-               <c:if test="${error!=null}">
-                     <p>error</p>
-               </c:if>
-       </div>
-	
-	<form:form modelAttribute="beneficiarioForm" action="beneficiario" method="POST">
 <style type="text/css">
  div.fixedHeaderTable {
      position: relative;
@@ -74,67 +66,57 @@
      _position: relative
  }
  </style>
-<FORM ACTION="" METHOD=POST>
+
+<h1> Busca Empleado </h1>
+<div id="errorDiv">
+               <c:if test="${error!=null}">
+                     <p>error</p>
+               </c:if>
+       </div>
+
+<form:form modelAttribute="buscaEmpleadoForm" action="buscaEmpleado"method="POST"> 
 <table align="center" border="0">
 
-
 <tr>
-<td align="left" width="5">Nombre:
+<td align="left" width="5">Num. Empleado:
 </td>
 <td align="center" width="5"><INPUT NAME="nombre" MAXLENGTH="5" TYPE="TEXT" VALUE="">
 </td>
-</tr>
-
-<tr>
-<td align="left" width="20">Apellido Paterno
-</td>
-<td align="left" width="70"><INPUT NAME="ApellidoP" MAXLENGTH="25" TYPE="TEXT" VALUE="">
-</td>
-</tr>
-
-<tr>
-<td align="left" width="20">Apellido Materno
-</td>
-<td align="left" width="70"><INPUT NAME="ApellidoM" MAXLENGTH="25" TYPE="TEXT" VALUE="">
-</td>
-</tr>
-
-<tr>
-<td align="left" width="100">Parentesco:
-</td>
-<td>
-<form id="form1" name="form1" method="post" action="">
-<select name="numtexts" id="numtexts" onchange="crear(this.value)">
-<option value="1">Padre</option>
-<option value="2">Madre</option>
-<option value="3">Hijo</option>
-</select>
-</form>
-<div id="contenedor"></div>
-</FORM>
-</td>
-</tr>
-<tr>
-<td align="left" width="5">No Porcentaje:
-</td>
-<td align="center" width="5"><INPUT NAME="n°por" MAXLENGTH="5" TYPE="TEXT" VALUE="">
-</td>
-</tr>
-<tr>
-<td align="left" width="5">Observaciones:
-</td>
-<td align="center" width="5"><INPUT NAME="obse" MAXLENGTH="5" TYPE="TEXT" VALUE="">
+<td align="right" width="100"><INPUT NAME="boton" TYPE="button" VALUE="Buscar" >
 </td>
 </tr>
 </TABLE>
 
-<table align="right" border="0">
 <tr>
-<td align="" width="300"><INPUT NAME="boton" TYPE="button" VALUE="Guardar" >
+<div class="fixedHeaderTable">
+   <table>
+      <thead>
+      	<tr><th>Num. Empleado</th><th>Nombre</th><th>Apellido Paterno</th><th>Apellido Materno</th><th>RFC</th><th>Estado</th><th>Region</th></tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+      
+   </table>       
+</div>
+</tr>
+<h1>Beneficiarios</h1>
+<tr>
+<div class="fixedHeaderTable">
+   <table>
+      <thead>
+      	<tr><th>Num. Beneficiario</th><th>Nombre</th><th>Apellido Paterno</th><th>Apellido Materno</th><th>Parentesco</th><th>Num. Porcentaje</th><th>Observaciones</th></tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+   </table>       
+</div>
+</tr>
+<tr>
+<td align="right" width="5000"><INPUT NAME="boton" TYPE="button" VALUE="Imprimir" >
 </td>
 </tr>
  </form:form>
-</table>
-
 </BODY>
 </HTML>

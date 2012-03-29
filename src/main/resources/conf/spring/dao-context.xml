@@ -40,6 +40,7 @@
 				<value>com.qualityOfLife.seguroDeVida.integration.entity.Empleado</value>
 				<value>com.qualityOfLife.seguroDeVida.integration.entity.Formato</value>
 				<value>com.qualityOfLife.seguroDeVida.integration.entity.Region</value>
+				<value>com.qualityOfLife.seguroDeVida.integration.entity.Campaña</value>
 								
 			</list>
 		</property>
@@ -64,6 +65,26 @@
 	</bean>
 	
 	<bean id="userPasswordDAO" class="com.qualityOfLife.seguroDeVida.integration.dao.impl.UserPasswordDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+	<bean id="beneficiarioDAO" class="com.qualityOfLife.seguroDeVida.integration.dao.impl.BeneficiarioDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+	<bean id="campañaDAO" class="com.qualityOfLife.seguroDeVida.integration.dao.impl.CampañaDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+	<bean id="empleadoDAO" class="com.qualityOfLife.seguroDeVida.integration.dao.impl.EmpleadoDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+	<bean id="formatoDAO" class="com.qualityOfLife.seguroDeVida.integration.dao.impl.FormatoDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+	<bean id="regionDAO" class="com.qualityOfLife.seguroDeVida.integration.dao.impl.RegionDAOImpl">
 		<property name="hibernateTemplate" ref="hibernateTemplate"/>
 	</bean>
 	

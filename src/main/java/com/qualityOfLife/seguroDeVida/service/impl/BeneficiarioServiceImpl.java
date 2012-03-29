@@ -2,13 +2,14 @@ package com.qualityOfLife.seguroDeVida.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.qualityOfLife.seguroDeVida.integration.dao.BeneficiarioDAO;
 import com.qualityOfLife.seguroDeVida.integration.entity.Beneficiario;
 import com.qualityOfLife.seguroDeVida.service.BeneficiarioService;
 
 public class BeneficiarioServiceImpl implements BeneficiarioService {
 	
-@Autowired
-	private BeneficiarioService beneficiarioDAO;
+    @Autowired
+	private BeneficiarioDAO beneficiarioDAO;
 
 	public void saveBeneficiario(Beneficiario beneficiario) {
 		beneficiarioDAO.saveBeneficiario(beneficiario);
