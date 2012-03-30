@@ -25,7 +25,7 @@ public class Empleado {
 	private String rFCEmp;
 
 	@Column(name = "Id_Estado")
-	private String idEstado;
+	private int idEstado;
 
 	@Column(name = "Id_Region")
 	private int idRegion;
@@ -74,16 +74,17 @@ public class Empleado {
 		return idEstado;
 	}
 
-	public void setIdEstado(String idEstado) {
+	public void setIdEstado(int idEstado) {
 		this.idEstado = idEstado;
 	}
 
-	public String getIdRegion() {
+	public int getIdRegion() {
 		return idRegion;
 	}
 
 	public void setIdRegion(int i) {
 		this.idRegion = i;
 	}
+
 
 }

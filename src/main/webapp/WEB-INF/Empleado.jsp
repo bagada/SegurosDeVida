@@ -54,12 +54,12 @@
 			</tr>
 
 			<tr>
-				<td><form:select path="nomEstado">
+				<td><form:select path="idEstado">
 						<form:option value="Activo"></form:option>
 						<form:option value="Inactivo"></form:option>
 					</form:select></td>
 				<td>
-				<td><form:select path="nomRegion">
+				<td><form:select path="idRegion">
 						<form:option value="Edo. Mexico"></form:option>
 						<form:option value="DF"></form:option>
 						<form:option value="Guadalajara"></form:option>

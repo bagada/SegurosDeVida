@@ -46,7 +46,7 @@ public class EmpleadoController {
 				empleado.setApePEmp(empleadoForm.getApePEmp());
 				empleado.setApeMEmp(empleadoForm.getApeMEmp());
 				empleado.setRFCEmp(empleadoForm.getrFCEmp());
-				empleado.getIdEstado(empleadoForm.getIdEstado());
+				empleado.setIdEstado(empleadoForm.getIdEstado());
 				empleado.setIdRegion(empleadoForm.getIdRegion());
 
 				try {
