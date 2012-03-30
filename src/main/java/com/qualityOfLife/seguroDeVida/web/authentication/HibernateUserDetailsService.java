@@ -31,11 +31,11 @@ public class HibernateUserDetailsService extends HibernateDaoSupport implements 
     private final org.apache.commons.logging.Log _log = org.apache.commons.logging.LogFactory.getLog(getClass());
 
     @Autowired
-    private AuthorityDAO _authorityDAO;
+    private AuthorityDAO authorityDAO;
     @Autowired
-    private UserDAO _userDao;
+    private UserDAO userDao;
     @Autowired
-    private UserPasswordDAO _userPasswordDAO;
+    private UserPasswordDAO userPasswordDAO;
     
     public UserDetails loadUserByUsername(final String userName) throws UsernameNotFoundException, DataAccessException {
         System.out.println("////////////////////////////////" + userName );
@@ -45,7 +45,7 @@ public class HibernateUserDetailsService extends HibernateDaoSupport implements 
             	System.out.println("--------- entra");
             	User us= null;
             	try{
-            	 us =_userDao.findByUsername(userName);
+            	 us =userDao.findByUsername(userName);
             	}catch(Exception e){
             		e.printStackTrace();
             	}
@@ -102,7 +102,7 @@ public class HibernateUserDetailsService extends HibernateDaoSupport implements 
     }
 
     private List<GrantedAuthority> getAuthorities(User user){
-        List<Authority> roles = _authorityDAO.getAuthoritiesByUsername(user.getIdUser());
+        List<Authority> roles = authorityDAO.getAuthoritiesByUsername(user.getIdUser());
         if(roles!=null){
         	System.out.println("esto debe de pasar" + roles.size() );
         }

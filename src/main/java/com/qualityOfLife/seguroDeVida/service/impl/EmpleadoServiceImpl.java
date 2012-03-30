@@ -11,6 +11,7 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 	@Autowired
 	private EmpleadoDAO empleadoDAO;
 	public void saveEmpleado(Empleado empleado) {
+		empleadoDAO.saveEmpleado(empleado);
 	
 }
 	public void updateEmpleado(Empleado empleado) {

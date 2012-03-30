@@ -6,30 +6,29 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Quality_Empleado")
+@Table(name = "Quality_Empleado")
 public class Empleado {
 	@Id
-	@Column(name="Id_Emp")
+	@Column(name = "Id_Emp")
 	private int idEmp;
-	
-	@Column(name="Nom_Emp")
+
+	@Column(name = "Nom_Emp")
 	private String nomEmp;
-	
-	@Column(name="ApeP_Emp")
+
+	@Column(name = "ApeP_Emp")
 	private String apePEmp;
-	
-	@Column(name="ApeM_Emp")
+
+	@Column(name = "ApeM_Emp")
 	private String apeMEmp;
-	
-	
-	@Column(name="RFC_Emp")
+
+	@Column(name = "RFC_Emp")
 	private String rFCEmp;
-	
-	@Column(name="Nom_Estado")
-	private String nomEstado;
-	
-	@Column(name="Nom_Region")
-	private String nomRegion;
+
+	@Column(name = "Id_Estado")
+	private String idEstado;
+
+	@Column(name = "Id_Region")
+	private int idRegion;
 
 	public int getIdEmp() {
 		return idEmp;
@@ -71,22 +70,20 @@ public class Empleado {
 		this.rFCEmp = rFCEmp;
 	}
 
-	public String getNomEstado() {
-		return nomEstado;
+	public int getIdEstado() {
+		return idEstado;
 	}
 
-	public void setNomEstado(String nomEstado) {
-		this.nomEstado = nomEstado;
+	public void setIdEstado(String idEstado) {
+		this.idEstado = idEstado;
 	}
 
-	public String getNomRegion() {
-		return nomRegion;
+	public String getIdRegion() {
+		return idRegion;
 	}
 
-	public void setNomRegion(String nomRegion) {
-		this.nomRegion = nomRegion;
+	public void setIdRegion(int i) {
+		this.idRegion = i;
 	}
-	
-	
 
 }

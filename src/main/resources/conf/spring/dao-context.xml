@@ -88,6 +88,14 @@
 		<property name="hibernateTemplate" ref="hibernateTemplate"/>
 	</bean>
 	
+	<bean id="parentescoDAO" class="com.qualityOfLife.seguroDeVida.integration.dao.impl.ParentescoDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+	<bean id="potenciacionDAO" class="com.qualityOfLife.seguroDeVida.integration.dao.impl.PotenciacionDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
 	<bean id="hibernateUserDetailsService"
           class="com.qualityOfLife.seguroDeVida.web.authentication.HibernateUserDetailsService">
         <property name="hibernateTemplate" ref="hibernateTemplate"/>

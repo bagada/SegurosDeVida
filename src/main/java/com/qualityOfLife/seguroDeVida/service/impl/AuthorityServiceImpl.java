@@ -12,6 +12,7 @@ public class AuthorityServiceImpl implements AuthorityService{
 
 	@Autowired
 	private AuthorityDAO authorityDAO; 
+	
 	public void saveAuthority(Authority authority) {
 		authorityDAO.saveAuthority(authority);
 	}
