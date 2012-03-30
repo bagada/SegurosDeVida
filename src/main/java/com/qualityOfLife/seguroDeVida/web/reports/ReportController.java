@@ -1,4 +1,4 @@
-package com.qualityOfLife.seguroDeVida.web;
+package com.qualityOfLife.seguroDeVida.web.reports;
 
 import net.sf.jasperreports.engine.JRExporter;
 import net.sf.jasperreports.engine.JRExporterParameter;
@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class ReportController {
 
 	@RequestMapping(value = "/imprimir", method = RequestMethod.GET)
-	public void login(ModelMap model) throws Exception {
-
-		JasperReport reporte = (JasperReport) JRLoader
-				.loadObject("Parentesco.jasper");
+	public  String login(ModelMap model) throws Exception {
+		System.out.println("______________________________________________________________--");
+		try{
+		JasperReport reporte = (JasperReport) JRLoader.loadObject("resources/Parentesco.jasper");
 
 		JasperPrint jasperPrint = JasperFillManager.fillReport(reporte, null);
 
@@ -29,6 +29,11 @@ public class ReportController {
 		exporter.setParameter(JRExporterParameter.JASPER_PRINT, jasperPrint);
 		exporter.setParameter(JRExporterParameter.OUTPUT_FILE,new java.io.File("reportePDF.pdf"));
 		exporter.exportReport();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return "/exito";
+		
 	}
 
 }
