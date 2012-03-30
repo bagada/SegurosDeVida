@@ -22,9 +22,9 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 	empleadoDAO.deleteEmpleado(empleado);
 		
 	}
-	public Empleado findEmpleado(Empleado empleado) {
+	public Empleado findEmpleado(Integer id) {
 		
-		return  empleadoDAO.findEmpleado(empleado);
+		return  empleadoDAO.findEmpleado(id);
 				
 				}
 }

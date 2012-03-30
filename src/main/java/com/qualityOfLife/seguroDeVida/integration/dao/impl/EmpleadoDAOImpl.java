@@ -21,9 +21,9 @@ public class EmpleadoDAOImpl extends HibernateDaoSupport implements EmpleadoDAO 
 		
 	}
 
-	public Empleado findEmpleado(Empleado empleado) {
+	public Empleado findEmpleado(Integer id) {
 
-		return (Empleado) getHibernateTemplate().find(String.valueOf(empleado.getIdEmp()));
+		return (Empleado) getHibernateTemplate().get(Empleado.class,id);
 	}
 
 }

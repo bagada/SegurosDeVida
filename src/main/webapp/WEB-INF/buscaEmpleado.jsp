@@ -10,6 +10,30 @@
 </HEAD>
 <BODY BGCOLOR=#99CCFF>
 
+<script src="resources/js/jquery.js"></script>
+<script type="text/javascript">
+function doAjaxPost(id) {  
+	  // get the form values  
+	  var name = $('#name').val();
+	  var postData = new Object();
+	  postData.id = name ;
+	  $.ajax({  
+	    type: "POST",  
+	    url: "/SeguroDeVida/busqueda",  
+	    data: postData,  
+	    success: function(response){  
+	      // we have the response  
+	      $('#info').html(response);
+	      $('#name').val('');
+	    },  
+	    error: function(e){  
+	      alert('Error: ' + e);  
+	      $('#name').val('');
+	    }  
+	  });  
+	}  
+</script>
+
 <style type="text/css">
  div.fixedHeaderTable {
      position: relative;
@@ -74,15 +98,15 @@
                </c:if>
        </div>
 
-<form:form modelAttribute="buscaEmpleadoForm" action="buscaEmpleado"method="POST"> 
+ 
 <table align="center" border="0">
 
 <tr>
-<td align="left" width="5">Num. Empleado:
+<td align="left" width="5">Nombre de empleado:
 </td>
-<td align="center" width="5"><INPUT NAME="nombre" MAXLENGTH="5" TYPE="TEXT" VALUE="">
+<td align="center" width="5"><INPUT id="name" NAME="nombre" MAXLENGTH="5" TYPE="TEXT" VALUE="">
 </td>
-<td align="right" width="100"><INPUT NAME="boton" TYPE="button" VALUE="Buscar" >
+<td align="right" width="100"><INPUT NAME="boton" TYPE="button" VALUE="Buscar"  onclick="doAjaxPost(1)"  >
 </td>
 </tr>
 </TABLE>
@@ -114,9 +138,10 @@
 </div>
 </tr>
 <tr>
-<td align="right" width="5000"><INPUT NAME="boton" TYPE="button" VALUE="Imprimir" >
+<td align="right" width="5000"><INPUT NAME="boton" TYPE="button" VALUE="Buscar">
 </td>
 </tr>
- </form:form>
+<tr><td colspan="2"><div id="info" style="color: green;"></div></td></tr>
+
 </BODY>
 </HTML>
